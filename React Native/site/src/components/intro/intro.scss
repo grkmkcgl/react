@@ -1,0 +1,161 @@
+@import "../../global.scss";
+
+.intro {
+    background-color: white;
+    display: flex;
+
+    @include mobile{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left {
+        flex: 0.5;
+        overflow: hidden;
+
+        .imgContainer {
+            width: 700px;
+            height: 700px;
+            background-color: seagreen;
+            border-radius: 50%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            float: right;
+
+            @include mobile{
+                align-items: flex-start;
+            }
+
+            img {
+                height: 120%;
+                width: 90%;
+
+                @include mobile{
+                    height: 40%;
+                    width: 40%;
+                }
+
+                animation-name: shake;
+                animation: shake 16s alternate infinite;
+                @keyframes shake {
+                    from{
+                        margin-left: -50px;
+                    }
+                    to{
+                        margin-left: 10px;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .right {
+        flex: 0.5;
+        position: relative;
+
+        .wrapper {
+            width: 100%;
+            height: 60%;
+            padding-left: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include mobile{
+                padding-left: 0;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 60px;
+                margin: 10px 0;
+
+                @include mobile{
+                    font-size: 40px;
+                }
+            }
+
+            h2 {
+                font-size: 35px;
+            }
+
+            h3 {
+                font-size: 30px;
+
+                @include mobile{
+                    font-size: 20px;
+                }
+
+                span {
+                    font-size: inherit;
+                    color: seagreen;
+                }
+
+                .ityped-cursor {
+                    animation: blink 1.1s infinite;
+                }
+
+                @keyframes blink {
+                    50% {
+                        opacity: 1;
+                    }
+                    100% {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+
+        .iconContainer {
+            width: 100%;
+            height: 70%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: -180px;
+
+            ul {
+                li {
+                    a {
+                        transition: all 300ms ease;
+                        img {
+                            height: 30px;
+                            width: 30px;
+                            transition: all 300ms ease;
+                        }
+
+                    }
+                }
+
+                a:not(:hover) img {
+                    opacity: 0.5;
+                }
+                a:hover img:hover {
+                    opacity: 1;
+                    height: 75px;
+                    width: 75px;
+                }
+            }
+        }
+
+        .arrowContainer {
+            a {
+                position: absolute;
+                bottom: 10px;
+                left: 40%;
+                img {
+                    width: 30px;
+                    animation: arrowBlink 0.75s infinite;
+                }
+                @keyframes arrowBlink {
+                    100% {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}

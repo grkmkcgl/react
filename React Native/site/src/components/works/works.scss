@@ -1,0 +1,104 @@
+.works{
+    background-color: seagreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .arrow{
+        height: 90px;
+        position: absolute;
+        cursor: pointer;
+
+        &.left{
+            left: 75px;
+            transform: rotateY(180deg);
+        }
+        &.right{
+            right: 75px;
+        }
+    }
+
+    .slider{
+        //slider nasıl width girmeden ekranda kendine boyut buluyor?
+        height: 400px; 
+        display: flex;
+        position: absolute;
+        left: 0;
+        transition: all 1s ease;
+        
+        .container{
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .item{
+                width: 850px; //buradanmış...
+                height: 100%;
+                background-color: white;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .left{
+                    flex: 4;
+                    height: 80%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .leftContainer{
+                        width: 90%;
+                        height: 90%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .imgContainer{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            background-color: rgb(99, 212, 148);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            img{
+                                width: 25px;
+                                transform: rotate(45deg);
+                            }
+                        }
+                        h2{
+                            font-size: 20px;
+                        }
+                        p{
+                            font-size: 13px;
+                        }
+                        span{
+                            font-size: 12px;
+                            font-weight: 600;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .right{
+                    flex: 8;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+
+                    img{
+                        width: 400px;
+                        transform: rotate(-10deg);
+                    }
+                }
+            }
+        }
+    
+    }
+    
+}
